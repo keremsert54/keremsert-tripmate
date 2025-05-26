@@ -1,0 +1,155 @@
+/* Home.css */
+.home-container {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 15px;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.hero-section {
+  position: relative;
+  text-align: center;
+  padding: 50px 15px; /* Daha geniş padding */
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop'); /* Arka plan görseli */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay efekti */
+  border-radius: 8px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Overlay’in üstünde */
+}
+
+.hero-content h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.explore-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.about-section,
+.features-section {
+  max-width: 1000px;
+  margin: 25px auto;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2,
+.features-section h2 {
+  font-size: 1.6em;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 0.9em;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.feature-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 180px;
+}
+
+.feature-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 10px;
+  }
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+  .hero-content p {
+    font-size: 0.9em;
+  }
+  .explore-button {
+    padding: 8px 15px;
+  }
+  .about-section,
+  .features-section {
+    padding: 15px;
+  }
+  .feature-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .feature-button {
+    max-width: 100%;
+  }
+}

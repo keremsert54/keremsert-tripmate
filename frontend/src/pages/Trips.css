@@ -1,0 +1,112 @@
+/* Trips.css */
+.trips-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trips-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.loading-message,
+.error-message,
+.no-trips-message {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.trip-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.suggestion-card {
+  border: 2px solid #2ecc71; /* Önerilen planları yeşil çerçeve ile ayır */
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+}
+
+.trip-card-content {
+  padding: 20px;
+}
+
+.trip-card-content h3 {
+  margin: 0 0 10px;
+  color: #34495e;
+  font-size: 20px;
+}
+
+.trip-card-content p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.trip-actions {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+.favorite-button,
+.delete-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.favorite-button {
+  background-color: #f1c40f;
+  color: white;
+}
+
+.favorite-button:hover {
+  background-color: #d4ac0d;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trips-container {
+    padding: 10px;
+  }
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+  .trip-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

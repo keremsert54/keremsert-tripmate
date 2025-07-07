@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './SignIn.css';
-import { useNavigate } from 'react-router-dom'; // Yönlendirme için
+import { useNavigate } from 'react-router-dom'; 
 
 function SignIn() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Yönlendirme için
+  const navigate = useNavigate(); 
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,12 +36,12 @@ function SignIn() {
         return response.json();
       })
       .then((data) => {
-        console.log('Login response:', data); // Yanıtı kontrol et
+        console.log('Login response:', data); 
         if (data.user && data.user.id && data.user.username) {
-          localStorage.setItem('userId', data.user.id); // userId'yi ayrı kaydet
-          localStorage.setItem('user', JSON.stringify(data.user)); // User nesnesini de sakla
+          localStorage.setItem('userId', data.user.id); 
+          localStorage.setItem('user', JSON.stringify(data.user)); 
           console.log('Giriş yapıldı, userId:', data.user.id, 'username:', data.user.username);
-          navigate('/home'); // Programatik yönlendirme
+          navigate('/home'); 
         } else {
           throw new Error('Kullanıcı verisi eksik!');
         }

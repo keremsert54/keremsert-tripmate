@@ -26,7 +26,7 @@ function SignUp() {
     }
     setError('');
 
-    fetch('http://127.0.0.1:8081/register', { // Mutlak URL eklendi
+    fetch('http://127.0.0.1:8081/register', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, email, password }),
@@ -36,13 +36,13 @@ function SignUp() {
         return response.json();
       })
       .then((data) => {
-        console.log('Register response:', data); // Yanıtı kontrol et
+        console.log('Register response:', data); 
         if (data.id && data.username) {
-          localStorage.setItem('userId', data.id); // Kayıt sonrası userId'yi kaydet
-          localStorage.setItem('user', JSON.stringify(data)); // User nesnesini sakla
+          localStorage.setItem('userId', data.id); 
+          localStorage.setItem('user', JSON.stringify(data)); 
           console.log('Kayıt yapıldı, userId:', data.id, 'username:', data.username);
           alert('Kayıt başarılı! Giriş yaptınız.');
-          navigate('/home'); // Programatik yönlendirme
+          navigate('/home'); 
         } else {
           throw new Error('Kullanıcı verisi eksik!');
         }

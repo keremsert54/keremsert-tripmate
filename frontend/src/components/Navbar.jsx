@@ -4,15 +4,14 @@ import './Navbar.css';
 function Navbar() {
   const location = useLocation();
   const isLoggedIn = !!localStorage.getItem('user');
-  const user = JSON.parse(localStorage.getItem('user') || '{}'); // Boşsa boş nesne döndür
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     window.location.href = '/signin';
   };
 
-  console.log('User from localStorage:', JSON.stringify(user, null, 2)); // Daha okunabilir log
-
+  console.log('User from localStorage:', JSON.stringify(user, null, 2)); 
   return (
     <nav className="navbar">
       <Link to="/home" className="navbar-logo">

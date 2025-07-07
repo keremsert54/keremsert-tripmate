@@ -1,4 +1,4 @@
-/* Trips.css */
+
 .trips-container {
   padding: 20px;
   max-width: 1200px;
@@ -39,7 +39,7 @@
 }
 
 .suggestion-card {
-  border: 2px solid #2ecc71; /* Önerilen planları yeşil çerçeve ile ayır */
+  border: 2px solid #2ecc71; 
 }
 
 .trip-card:hover {
@@ -97,7 +97,6 @@
   background-color: #c0392b;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .trips-container {
     padding: 10px;

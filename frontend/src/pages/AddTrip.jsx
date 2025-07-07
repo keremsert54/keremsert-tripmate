@@ -37,7 +37,7 @@ function AddTrip() {
         return response.json();
       })
       .then((data) => {
-        console.log('Rota eklendi:', data); // Dönen veriyi logla
+        console.log('Rota eklendi:', data); 
         alert('Rota başarıyla eklendi!');
         setTitle('');
         setDestination('');

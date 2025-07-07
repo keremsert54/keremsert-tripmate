@@ -19,7 +19,7 @@ struct Trip {
     destination: String,
     creator_id: i32,
     tags: Vec<String>,
-    username: Option<String>, // username Optional olarak tanımlı, SQL JOIN ile doldurulacak
+    username: Option<String>, 
 }
 
 #[derive(Deserialize)]
@@ -97,7 +97,7 @@ async fn create_trip(pool: web::Data<PgPool>, trip: web::Json<CreateTrip>, req: 
     };
     info!("Creating trip with user_id: {}", user_id);
 
-    // JOIN ile username'i users tablosundan al
+
     let result = sqlx::query_as::<_, Trip>(
         "INSERT INTO trips (title, destination, creator_id, tags) VALUES ($1, $2, $3, $4) 
          RETURNING id, title, destination, creator_id, tags, 
@@ -178,7 +178,7 @@ async fn register(pool: web::Data<PgPool>, user: web::Json<CreateUser>) -> impl 
     match result {
         Ok(user) => {
             info!("User registered: {}", user.email);
-            HttpResponse::Ok().json(user) // user.id ve user.username dönecek
+            HttpResponse::Ok().json(user) 
         }
         Err(e) => {
             error!("Error registering user: {}", e);
